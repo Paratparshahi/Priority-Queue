@@ -1,0 +1,28 @@
+def checkMaxHeap(lst):
+    n=len(lst)
+    flag=True
+    for i in range(0,n):
+        parentindex=i  
+        leftchild=2*i+1
+        rightchild=2*i+2 
+        
+        if leftchild<n and lst[leftchild]>lst[parentindex]:
+            flag=False 
+            break
+        if rightchild<n and lst[parentindex]<lst[rightchild]:
+            flag=False 
+            break 
+    return flag 
+
+
+
+            
+        
+   
+    
+    pass
+
+# Main Code
+n=int(input())
+lst=list(int(i) for i in input().strip().split(' '))
+print('true') if checkMaxHeap(lst) else print('false')
